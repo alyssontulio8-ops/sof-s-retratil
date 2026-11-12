@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3c2b24">
+  <meta name="description" content="Cabeceira & Conforto — cabeceiras, sofás retráteis, baús, bases box, sofanetes, poltronas e namoradeiras. Peça seu orçamento pelo WhatsApp.">
+  <title>Cabeceira & Conforto | Conforto e elegância para sua casa</title>
+  <style>
+    :root {
+      --espresso:#3c2b24; --brown:#674b3e; --gold:#b8955b; --gold-light:#d6bd8e;
+      --cream:#f8f4ee; --sand:#e9dfd2; --nude:#d9c7b5; --ink:#302722; --muted:#756b64;
+      --white:#fff; --shadow:0 16px 45px rgba(55,39,30,.10); --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topline{background:var(--espresso);color:#f8f2e9;text-align:center;padding:8px 14px;font-size:12px;letter-spacing:.12em}
+    header{position:sticky;top:0;z-index:20;background:rgba(248,244,238,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(103,75,62,.12)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:220px}
+    .brand-mark{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:23px}
+    .brand-name{font-family:Georgia,serif;font-size:19px;line-height:1.1;letter-spacing:.02em;color:var(--espresso)}
+    .brand-name small{display:block;font:10px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:5px}
+    nav{display:flex;align-items:center;gap:27px;font-size:13px;color:#59483e}
+    nav a:hover{color:var(--gold)}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--espresso);color:#fff;padding:13px 20px;border-radius:4px;font-size:13px;font-weight:700;letter-spacing:.02em;transition:.2s;border:1px solid var(--espresso)}
+    .nav-cta:hover,.button:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+    .menu-toggle{display:none;background:none;border:0;color:var(--espresso);font-size:25px}
+    .hero{position:relative;min-height:610px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(35,25,20,.78) 0%,rgba(35,25,20,.48) 48%,rgba(35,25,20,.08) 100%),url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero-content{color:white;max-width:650px;padding:90px 0}
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.25em;color:var(--gold-light);font-weight:bold}
+    h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400}
+    h1{font-size:clamp(42px,6vw,70px);line-height:1.06;margin:18px 0 20px;max-width:680px}
+    .hero p{max-width:500px;color:#f3eae1;font-size:16px;margin:0 0 30px}
+    .button.gold{background:var(--gold);border-color:var(--gold);color:#241b16}
+    .button.gold:hover{background:#d0b47e;border-color:#d0b47e}
+    .hero-note{margin-top:24px;color:#f4e8d6;font-size:12px;letter-spacing:.08em}
+    .trust-strip{background:#fff;display:grid;grid-template-columns:repeat(3,1fr);padding:24px max(20px,calc((100% - 1050px)/2));gap:20px;border-bottom:1px solid var(--sand)}
+    .trust-item{text-align:center;color:var(--brown);font-size:13px}
+    .trust-item strong{display:block;color:var(--espresso);font-family:Georgia,serif;font-size:17px;font-weight:400}
+    section{padding:88px 0}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 42px}
+    .section-head h2{font-size:clamp(32px,4vw,46px);line-height:1.15;color:var(--espresso);margin:10px 0 12px}
+    .section-head p{color:var(--muted);font-size:14px;margin:0}
+    .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .category{position:relative;height:260px;border-radius:var(--radius);overflow:hidden;background:#d8c9b9;box-shadow:var(--shadow)}
+    .category img{transition:transform .5s}
+    .category:hover img{transform:scale(1.06)}
+    .category:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(28,19,15,.78))}
+    .category-label{position:absolute;z-index:1;left:20px;right:15px;bottom:17px;color:white}
+    .category-label h3{font-size:23px;margin:0 0 2px}
+    .category-label span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f1dfc1}
+    .products-section{background:#eee6dc}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .product{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(55,39,30,.07)}
+    .product-photo{height:245px;background:#e5dbcf;position:relative}
+    .product-photo img{transition:transform .4s}
+    .product:hover .product-photo img{transform:scale(1.04)}
+    .product-info{padding:22px}
+    .product-info h3{font-size:24px;color:var(--espresso);margin:0 0 7px}
+    .product-info p{font-size:13px;color:var(--muted);min-height:42px;margin:0 0 17px}
+    .product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .price{font-size:12px;color:var(--brown);font-weight:bold}
+    .small-link{font-size:12px;font-weight:bold;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:3px}
+    .about{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:65px}
+    .about-photo{height:480px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .about-copy h2{font-size:clamp(32px,4vw,46px);line-height:1.12;color:var(--espresso);margin:12px 0 18px}
+    .about-copy p{color:var(--muted);font-size:14px}
+    .benefits{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+    .benefit{border-left:2px solid var(--gold);padding-left:13px}
+    .benefit strong{display:block;color:var(--espresso);font-family:Georgia,serif;font-size:17px;font-weight:400}
+    .benefit span{font-size:12px;color:var(--muted)}
+    .quote-band{background:var(--espresso);color:white;text-align:center;padding:66px 20px}
+    .quote-band h2{font-size:clamp(29px,4vw,42px);margin:0 auto 12px;max-width:760px}
+    .quote-band p{font-size:13px;color:#dfd0bf;margin:0 auto 25px}
+    .contact{background:#e9dfd2}
+    .contact-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;background:#f9f6f1;padding:42px 48px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .contact-inner h2{font-size:34px;color:var(--espresso);margin:0 0 8px}
+    .contact-inner p{margin:0;color:var(--muted);font-size:14px}
+    footer{background:#2e211b;color:#e9dfd2;padding:45px 0 22px}
+    .footer-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start;padding-bottom:30px}
+    footer .brand-name{color:white}
+    .footer-links{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:#d6c5b4}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.13);padding-top:18px;display:flex;justify-content:space-between;gap:20px;font-size:11px;color:#b9a99b}
+    .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:white;font-size:27px;box-shadow:0 8px 25px rgba(0,0,0,.22)}
+    .whatsapp-float:hover{transform:translateY(-3px)}
+    @media(max-width:900px){nav{gap:15px}.categories{grid-template-columns:repeat(2,1fr)}.about{gap:35px}.products{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:680px){
+      .container{width:min(100% - 30px,1160px)}.nav{min-height:68px}.menu-toggle{display:block}
+      nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--cream);padding:20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--sand)}
+      nav.open{display:flex}.nav-cta{display:none}.brand{min-width:0}.brand-name{font-size:17px}
+      .hero{min-height:570px;background-position:58% center}.hero-content{padding:75px 0}.hero p{font-size:14px}
+      .trust-strip{grid-template-columns:1fr;padding:22px}.trust-item{font-size:12px}
+      section{padding:65px 0}.categories{gap:12px}.category{height:205px}.category-label{left:13px;bottom:13px}.category-label h3{font-size:19px}
+      .products{grid-template-columns:1fr;gap:16px}.product-photo{height:250px}.about{grid-template-columns:1fr;gap:28px}.about-photo{height:320px;order:2}
+      .contact-inner{padding:30px 23px;align-items:flex-start;flex-direction:column}.contact-inner h2{font-size:29px}
+      .footer-top,.footer-bottom{flex-direction:column}.footer-links{gap:15px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topline">CONFORTO, QUALIDADE E ELEGÂNCIA PARA SUA CASA</div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Cabeceira e Conforto - início">
+        <span class="brand-mark">C</span>
+        <span class="brand-name">CABECEIRA &amp; CONFORTO<small>ESTOFADOS • CONFORTO • DESIGN</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav id="menu">
+        <a href="#inicio">Início</a><a href="#produtos">Produtos</a><a href="#sobre">Sobre nós</a><a href="#contato">Contato</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/5531983310783?text=Ol%C3%A1%21%20Vim%20pelo%20site%20Cabeceira%20%26%20Conforto%20e%20gostaria%20de%20conhecer%20os%20produtos." target="_blank" rel="noopener">Fale pelo WhatsApp ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Seu lar merece esse cuidado</div>
+          <h1>Transforme seu ambiente com conforto, qualidade e elegância.</h1>
+          <p>Encontre estofados que combinam beleza, aconchego e praticidade. Conheça nossa linha de produtos e solicite seu orçamento.</p>
+          <a class="button gold" href="https://wa.me/5531983310783?text=Ol%C3%A1%21%20Vim%20pelo%20site%20Cabeceira%20%26%20Conforto%20e%20gostaria%20de%20conhecer%20os%20produtos." target="_blank" rel="noopener">Solicite seu orçamento <span>→</span></a>
+          <div class="hero-note">CABEÇEIRAS • SOFÁS • BAÚS • ESTOFADOS</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="trust-item"><strong>Conforto em cada detalhe</strong>Produtos pensados para seu lar</div>
+      <div class="trust-item"><strong>Qualidade e acabamento</strong>Atenção aos detalhes</div>
+      <div class="trust-item"><strong>Atendimento próximo</strong>Converse com nossa equipe</div>
+    </div>
+
+    <section id="categorias">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Nossa linha</div><h2>Encontre o conforto ideal</h2><p>Explore nossas categorias e descubra opções para deixar cada ambiente ainda mais acolhedor.</p></div>
+        <div class="categories">
+          <a class="category" href="#produtos"><img loading="lazy" src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=900&q=80" alt="Quarto com cabeceira estofada"><div class="category-label"><h3>Cabeceiras</h3><span>Beleza para seu quarto</span></div></a>
+          <a class="category" href="#produtos"><img loading="lazy" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Sofá confortável em sala"><div class="category-label"><h3>Sofás retráteis</h3><span>Espaço para relaxar</span></div></a>
+          <a class="category" href="#produtos"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Sala elegante com móveis"><div class="category-label"><h3>Baús e base box</h3><span>Praticidade e organização</span></div></a>
+          <a class="category" href="#produtos"><img loading="lazy" src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=900&q=80" alt="Poltrona estofada"><div class="category-label"><h3>Poltronas</h3><span>Seu cantinho especial</span></div></a>
+          <a class="category" href="#produtos"><img loading="lazy" src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=900&q=80" alt="Ambiente de estar decorado"><div class="category-label"><h3>Sofanetes</h3><span>Charme e conforto</span></div></a>
+          <a class="category" href="#produtos"><img loading="lazy" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Móveis em ambiente elegante"><div class="category-label"><h3>Namoradeiras Opala</h3><span>Estilo que encanta</span></div></a>
+          <a class="category" href="#produtos"><img loading="lazy" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80" alt="Sala com decoração neutra"><div class="category-label"><h3>Baús estofados</h3><span>Mais espaço no dia a dia</span></div></a>
+          <a class="category" href="#contato"><img loading="lazy" src="https://images.unsplash.com/photo-1615874694520-474822394e73?auto=format&fit=crop&w=900&q=80" alt="Quarto aconchegante"><div class="category-label"><h3>Atendimento</h3><span>Vamos encontrar seu modelo</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="produtos">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Destaques</div><h2>Produtos para viver melhor</h2><p>Veja algumas das nossas linhas. Consulte modelos, medidas, tecidos, disponibilidade e valores pelo WhatsApp.</p></div>
+        <div class="products">
+          <article class="product"><div class="product-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1000&q=85" alt="Cabeceira estofada em quarto elegante"></div><div class="product-info"><h3>Cabeceiras estofadas</h3><p>Modelos modernos, tradicionais, capitonê e geométricos para valorizar seu quarto.</p><div class="product-bottom"><span class="price">Consulte modelos e valores</span><a class="small-link product-link" data-product="Cabeceiras estofadas" href="#">Consultar →</a></div></div></article>
+          <article class="product"><div class="product-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=85" alt="Sofá retrátil em sala moderna"></div><div class="product-info"><h3>Sofás retráteis</h3><p>Conforto para reunir a família, descansar e aproveitar seus momentos.</p><div class="product-bottom"><span class="price">Consulte modelos e valores</span><a class="small-link product-link" data-product="Sofás retráteis" href="#">Consultar →</a></div></div></article>
+          <article class="product"><div class="product-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85" alt="Baú e móveis para organização"></div><div class="product-info"><h3>Baús estofados</h3><p>Uma solução prática para guardar objetos e manter tudo organizado.</p><div class="product-bottom"><span class="price">Consulte modelos e valores</span><a class="small-link product-link" data-product="Baús estofados" href="#">Consultar →</a></div></div></article>
+          <article class="product"><div class="product-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1000&q=85" alt="Base de cama em quarto decorado"></div><div class="product-info"><h3>Base box baú</h3><p>Praticidade para o quarto com espaço interno para organizar seus pertences.</p><div class="product-bottom"><span class="price">Consulte modelos e valores</span><a class="small-link product-link" data-product="Base box baú" href="#">Consultar →</a></div></div></article>
+          <article class="product"><div class="product-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85" alt="Sofanete em ambiente aconchegante"></div><div class="product-info"><h3>Sofanetes</h3><p>Modelos elegantes para completar sua sala, recepção ou espaço de convivência.</p><div class="product-bottom"><span class="price">Consulte modelos e valores</span><a class="small-link product-link" data-product="Sofanetes" href="#">Consultar →</a></div></div></article>
+          <article class="product"><div class="product-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1000&q=85" alt="Poltrona estofada contemporânea"></div><div class="product-info"><h3>Poltronas</h3><p>Peças que unem personalidade, aconchego e beleza em diferentes ambientes.</p><div class="product-bottom"><span class="price">Consulte modelos e valores</span><a class="small-link product-link" data-product="Poltronas" href="#">Consultar →</a></div></div></article>
+          <article class="product"><div class="product-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85" alt="Namoradeira em decoração elegante"></div><div class="product-info"><h3>Namoradeiras Opala</h3><p>Modelos com visual marcante e acabamento para dar destaque ao ambiente.</p><div class="product-bottom"><span class="price">Consulte modelos e valores</span><a class="small-link product-link" data-product="Namoradeiras Opala" href="#">Consultar →</a></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container about">
+        <div class="about-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85" alt="Ambiente residencial com móveis em tons neutros"></div>
+        <div class="about-copy"><div class="eyebrow">Cabeceira &amp; Conforto</div><h2>O cuidado que sua casa merece.</h2><p>Acreditamos que conforto e beleza fazem a diferença no dia a dia. Nossa proposta é ajudar você a encontrar estofados que combinem com seu espaço, seu estilo e suas necessidades.</p><p>Fale com a nossa equipe para conhecer opções, tirar dúvidas e solicitar um orçamento personalizado.</p>
+          <div class="benefits"><div class="benefit"><strong>Qualidade</strong><span>Atenção aos materiais e acabamentos</span></div><div class="benefit"><strong>Variedade</strong><span>Opções para diferentes ambientes</span></div><div class="benefit"><strong>Atendimento</strong><span>Orientação na escolha do produto</span></div><div class="benefit"><strong>Conforto</strong><span>Beleza e aconchego para sua casa</span></div></div>
+          <a class="button" href="https://wa.me/5531983310783?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20Cabeceira%20%26%20Conforto." target="_blank" rel="noopener">Conheça nossos produtos →</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="quote-band">
+      <div class="eyebrow">Seu próximo ambiente começa aqui</div>
+      <h2>Um toque de conforto pode transformar toda a sua casa.</h2>
+      <p>Conte o que você procura. Vamos ajudar você a encontrar a opção ideal.</p>
+      <a class="button gold" href="https://wa.me/5531983310783?text=Ol%C3%A1%21%20Vim%20pelo%20site%20Cabeceira%20%26%20Conforto%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento</a>
+    </div>
+
+    <section class="contact" id="contato">
+      <div class="container">
+        <div class="contact-inner"><div><div class="eyebrow">Fale com a gente</div><h2>Vamos conversar?</h2><p>Peça informações sobre modelos, medidas, tecidos e disponibilidade.</p></div><a class="button gold" href="https://wa.me/5531983310783?text=Ol%C3%A1%21%20Vim%20pelo%20site%20Cabeceira%20%26%20Conforto%20e%20gostaria%20de%20conhecer%20os%20produtos." target="_blank" rel="noopener">Chamar no WhatsApp ↗</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand" href="#inicio"><span class="brand-mark">C</span><span class="brand-name">CABECEIRA &amp; CONFORTO<small>CONFORTO PARA SEU LAR</small></span></a>
+        <div class="footer-links"><a href="#inicio">Início</a><a href="#produtos">Produtos</a><a href="#sobre">Sobre nós</a><a href="#contato">Contato</a><a href="https://wa.me/5531983310783" target="_blank" rel="noopener">WhatsApp</a></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Cabeceira &amp; Conforto. Todos os direitos reservados.</span><span>Conforto, qualidade e elegância.</span></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5531983310783?text=Ol%C3%A1%21%20Vim%20pelo%20site%20Cabeceira%20%26%20Conforto%20e%20gostaria%20de%20conhecer%20os%20produtos." target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">✆</a>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('#menu');
+    menuButton.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.textContent = isOpen ? '×' : '☰';
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = '☰';
+    }));
+    document.querySelectorAll('.product-link').forEach(link => {
+      const product = link.dataset.product;
+      const message = `Olá! Vim pelo site Cabeceira & Conforto e gostaria de informações sobre ${product}.`;
+      link.href = `https://wa.me/5531983310783?text=${encodeURIComponent(message)}`;
+      link.target = '_blank';
+      link.rel = 'noopener';
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
